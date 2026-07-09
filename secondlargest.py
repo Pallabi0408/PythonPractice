@@ -5,7 +5,7 @@ for i in arr:
     if i>l:
         sl=l
         l=i
-    elif i<l and i>sl:
+    elif i>sl and i!=l:
         sl=i
 print(l)
 print(sl)

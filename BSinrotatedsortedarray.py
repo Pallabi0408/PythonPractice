@@ -1,0 +1,23 @@
+arr=list(map(int, input().split()))
+target=int(input())
+left=0
+right=len(arr)-1
+while left<=right:
+    mid=left+(right-left)//2
+    if arr[mid]==target:
+        print("The target found at index",mid)
+        break
+    elif arr[mid]<=arr[right]:
+        if arr[mid]<target<=arr[right]:
+            left=mid+1
+        else:
+            right=mid-1
+    else:
+        if arr[left]<=target<arr[mid]:
+            right=mid-1
+        else:
+            left=mid+1
+else:
+    print("Target not found")
+
+
